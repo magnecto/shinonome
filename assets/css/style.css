@@ -84,3 +84,22 @@ a:hover{border-bottom-color:var(--ink)}
 @media (max-width: 980px){
   .media, .features, .plan-grid{grid-template-columns:1fr}
 }
+
+
+/* --- from alt version: badges, numbered features, section intro --- */
+.hero-tags{display:flex; gap:10px; flex-wrap:wrap; margin-top: var(--s6)}
+.tag{font-size:12px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:#455; background:#fafbfc}
+
+.section-intro{max-width:800px; margin:0 auto var(--s12); text-align:center}
+.section-intro p{color:var(--muted)}
+
+.numgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s8)}
+.numitem{border:1px solid var(--border); border-radius:var(--radius); padding:var(--s8); background:#fff}
+.num{display:inline-grid; place-items:center; width:40px; height:40px; border-radius:999px; border:1px solid var(--ink); font-weight:700; margin-bottom:var(--s4)}
+
+.kv{letter-spacing:.22em; font-size:12px; color:#9aa3af; text-transform:uppercase}
+
+/* table (for料金/概要) */
+.table{width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden}
+.table th,.table td{padding:14px 16px; border-bottom:1px solid var(--border)}
+.table th{background:#f9fbfd; text-align:left; color:#374151; font-weight:600}
