@@ -1,6 +1,6 @@
 title: "シノノメ Cowork & Stand"
 description: "立ち飲み酒場の2階にある、24時間使える小さなコワーキング。3階には会議室も。"
-url: ""
-baseurl: ""
+url: "https://magnetco.github.io"
+baseurl: "/shinonome"
 markdown: kramdown
 timezone: Asia/Tokyo
