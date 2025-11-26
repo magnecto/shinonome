@@ -1,0 +1,7 @@
+title: "シノノメ Cowork & Stand"
+description: "立ち飲み酒場の2階にある、24時間使える小さなコワーキング。3階には会議室も。"
+url: "" # 例: https://yourname.github.io
+baseurl: "" # 例: /shinonome-lp
+markdown: kramdown
+timezone: Asia/Tokyo
+# GitHub Pages 標準JekyllでOK（プラグイン不要）
