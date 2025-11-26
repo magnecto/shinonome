@@ -8,26 +8,21 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ page.title | default: site.title }}">
 <meta property="og:description" content="{{ page.description | default: site.description }}">
-<meta property="og:image" content="{{ site.baseurl }}/assets/images/hero.jpg">
-<link rel="stylesheet" href="assets/css/style.css">
-<meta property="og:image" content="assets/images/hero.jpg">
+<meta property="og:image" content="{{ '/assets/images/hero.jpg' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-<div class="wrap">
-<header>
-<div class="brand">
-<div class="logo" aria-hidden="true"></div>
-<div>
-<div style="font-weight:800;">シノノメ Cowork & Stand</div>
-<div class="muted" style="font-size:13px;">酒場×シェアオフィス｜2Fコワーキング & 3F会議室</div>
-</div>
-</div>
-<nav>
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="{{ '/' | relative_url }}">シノノメ Cowork & Stand</a>
+<nav class="nav">
+<a href="#about">について</a>
+<a href="#features">メリット</a>
 <a href="#plans">料金</a>
-<a href="#features">設備</a>
 <a href="#access">アクセス</a>
-<a class="btn" href="#apply">仮申込</a>
+<a class="btn btn-black" href="#apply">内覧予約</a>
 </nav>
+</div>
 </header>
 
 
@@ -36,10 +31,11 @@
 </main>
 
 
-<footer>
-<div>© {{ "now" | date: "%Y" }} シノノメ Cowork & Stand</div>
-<div class="muted">お問い合わせ: <a href="mailto:hello@example.com">hello@example.com</a></div>
-</footer>
+<footer class="site-footer">
+<div class="container footer-inner">
+<small>© {{ "now" | date: "%Y" }} シノノメ Cowork & Stand</small>
+<small>お問い合わせ: <a href="mailto:hello@example.com">hello@example.com</a></small>
 </div>
+</footer>
 </body>
 </html>
