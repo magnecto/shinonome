@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>シノノメ | 昼はシェアオフィス、夜は酒場 — 会員募集</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="昼はシェアオフィス、夜は会員制の小さな酒場。二つの顔を持つサードプレイス『シノノメ』。内覧予約・会員エントリーはこちら。">
+<link rel="canonical" href="https://example.com/">
+<style>
+  :root{
+    --bg:#fff; --text:#131313; --muted:#666; --line:#e9e9ef;
+    --pill:#f7f8fb; --container:1080px; --radius:14px; --shadow:0 10px 26px rgba(0,0,0,.06);
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Kaku Gothic ProN","BIZ UDPGothic","Noto Sans JP",sans-serif;line-height:1.8}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 24px}
+  .kicker{font-size:.78rem;letter-spacing:.18em;color:#8b8b8b;text-transform:uppercase}
+  .muted{color:var(--muted)}
+  h1,h2,h3{letter-spacing:.01em}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(1.05) blur(8px);border-bottom:1px solid var(--line)}
+  .nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;gap:.7rem;align-items:center}
+  .mark{width:26px;height:26px;border-radius:6px;background:#111;position:relative}
+  .mark:after{content:"";position:absolute;inset:4px;border-radius:4px;background:linear-gradient(135deg,#111,#3b3b3b)}
+  .links{display:flex;gap:18px;align-items:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;border:1px solid #111;background:#111;color:#fff;font-weight:700;cursor:pointer}
+  .btn.ghost{background:#fff;color:#111}
+  /* hero */
+  .hero{border-bottom:1px solid var(--line);background:#fafafb}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;padding:56px 0}
+  .hero h1{font-size:clamp(28px,4.6vw,44px);line-height:1.14;margin:.4rem 0 1rem}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+  .tag{background:var(--pill);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:.86rem}
+  .hero-img{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+  /* section */
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .head{margin-bottom:18px}
+  .head h2{font-size:clamp(22px,3.2vw,30px);margin:.3rem 0 .6rem}
+  /* 6 points */
+  .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:18px}
+  .num{font-size:.85rem;color:#9b9b9b;letter-spacing:.18em}
+  .card h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+  /* announcement */
+  .announce{display:flex;gap:16px;align-items:flex-start;border:1px solid #111;border-radius:12px;padding:14px 16px;background:#fff}
+  /* space photos */
+  .wide{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .wide img{width:100%;height:100%;object-fit:cover;display:block}
+  /* plans */
+  .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .plan{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff}
+  .plan.highlight{outline:3px solid #111}
+  .price{font-size:1.6rem;font-weight:800}
+  .small{font-size:.86rem;color:var(--muted)}
+  .ul{margin:.4rem 0 .2rem;padding-left:1.1rem}
+  .ul li{margin:.16rem 0}
+  /* layout */
+  .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:22px}
+  .box{border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff}
+  .layout-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .layout-item{border:1px solid var(--line);border-radius:12px;padding:10px}
+  .layout-item img{width:100%;display:block;border-radius:8px}
+  /* overview & form */
+  form .row{margin-bottom:10px}
+  label{display:block;font-size:.92rem;margin-bottom:4px}
+  input,select,textarea{width:100%;padding:10px 12px;border:1px solid #d9d9e3;border-radius:10px;background:#fff;font-size:1rem}
+  textarea{min-height:96px;resize:vertical}
+  /* sticky cta (mobile) */
+  .sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px;z-index:60}
+  .sticky a{display:block;text-align:center}
+  @media(min-width:900px){.sticky{display:none}}
+  /* footer */
+  footer{padding:20px 0 38px}
+  .foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.95rem;border-top:1px solid var(--line);padding-top:16px}
+  /* responsive */
+  @media(max-width:980px){
+    .hero-grid,.grid-3,.plans,.cols{grid-template-columns:1fr}
+    .layout-list{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="mark"></div>
+      <div>
+        <div style="font-weight:800;letter-spacing:.12em">SHINONOME</div>
+        <div class="muted" style="font-size:.8rem">昼はシェアオフィス / 夜は酒場</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#points">ポイント</a>
+      <a href="#status">募集状況</a>
+      <a href="#plans">料金</a>
+      <a href="#layout">間取り</a>
+      <a href="#overview">概要</a>
+      <a href="#contact" class="btn ghost" style="padding:8px 14px">内覧予約</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Member Recruitment</div>
+        <h1>朝のタスクと、夜の一杯が<br>ひと続きになる場所。</h1>
+        <p class="muted">「シノノメ」は、仕事とお酒と雑談がゆるく混ざり合う、少人数制のシェアオフィス × 酒場。日中は集中して働き、日が落ちたらカウンターで一息。そんなリズムを日常に。</p>
+        <div class="tags">
+          <span class="tag">少人数・会員制</span>
+          <span class="tag">フリードリンク</span>
+          <span class="tag">平日 10:00–23:00（予定）</span>
+        </div>
+        <div class="cta" style="display:flex;gap:12px;margin-top:6px">
+          <a class="btn" href="#contact">会員エントリー</a>
+          <a class="btn ghost" href="#points">まずはポイントを見る</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <!-- Hero仮写真／後で差し替え推奨 -->
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop" alt="ラウンジの雰囲気">
+      </div>
+    </div>
+  </section>
+
+  <!-- 6つのポイント（LOK構成に倣って集約見出し＋本文の並び） -->
+  <section id="points">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Points</div>
+        <h2>シノノメの6つのポイント</h2>
+        <p class="muted">編集デザインの情報設計を意識し、白基調で読みやすく。昼と夜の“使い分け”が自然にできる場づくりを大切にしています。</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="num">01</div><h3>白基調の落ち着いた空間</h3><p>飽きのこないシンプルな内装。昼は自然光、夜は控えめの照明で、仕事とリラックスの切替がしやすい設計。</p></div>
+        <div class="card"><div class="num">02</div><h3>共用設備で初期コスト抑制</h3><p>電源・Wi-Fi・複合機などを共用化。準備の手間なく、すぐに仕事を始められます。</p></div>
+        <div class="card"><div class="num">03</div><h3>昼：集中できるワークゾーン</h3><p>フリーアドレス。会話OK席と集中席をゆるく分離し、用途に合わせて選べます。</p></div>
+        <div class="card"><div class="num">04</div><h3>夜：会員制の小さな酒場</h3><p>カウンターで一杯。会員イベントも歓迎（強制参加なし）。ノンアルもOK。</p></div>
+        <div class="card"><div class="num">05</div><h3>ゲスト同伴OK</h3><p>会員1名につきゲスト数名まで同伴可能（別途チャージ）。打合せ後にそのまま一杯も。</p></div>
+        <div class="card"><div class="num">06</div><h3>住所利用・登記（オプション）</h3><p>ニーズ次第で提供予定。募集時のアンケートで要望をヒアリングします。</p></div>
+      </div>
+
+      <!-- 空間イメージ（昼/夜） -->
+      <div class="wide" style="margin:22px 0 0">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=2000&auto=format&fit=crop" alt="明るいデスクエリア">
+      </div>
+      <div class="wide" style="margin:14px 0 0">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000&auto=format&fit=crop" alt="夜のラウンジの雰囲気">
+      </div>
+    </div>
+  </section>
+
+  <!-- 募集状況（参考URLの“現在募集中の部屋”節に合わせて、まずは情報ボックスで） -->
+  <section id="status">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Recruitment</div>
+        <h2>現在の募集状況</h2>
+      </div>
+      <div class="announce">
+        <div style="font-weight:800">募集</div>
+        <div class="muted">プレ会員（β期間のモニター）を<strong style="color:#111">20名限定</strong>で募集中です。定員に達し次第、一次募集を締め切ります。内覧は個別に実施します（要予約）。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金プラン（白ベース簡潔） -->
+  <section id="plans">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Plans</div>
+        <h2>会員プラン（叩き台）</h2>
+        <p class="muted">実料金・内容はプレ会員のご意見を踏まえて調整予定です。</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <div class="kicker">Night</div>
+          <h3>ナイトラウンジ会員</h3>
+          <div class="price">¥9,800 <span class="small">/ 月（想定・税込）</span></div>
+          <ul class="ul">
+            <li>18:00–23:00 ラウンジ利用</li><li>会員価格ドリンク</li><li>ゲスト同伴可（別途）</li>
+          </ul>
+          <a class="btn ghost" href="#contact">このプランで相談</a>
+        </div>
+        <div class="plan highlight">
+          <div class="kicker">Full</div>
+          <h3>フルタイム会員</h3>
+          <div class="price">¥18,000 <span class="small">/ 月（想定・税込）</span></div>
+          <ul class="ul">
+            <li>10:00–23:00 ワーク&ラウンジ</li><li>フリードリンク</li><li>会員イベント参加</li>
+          </ul>
+          <a class="btn" href="#contact">フルタイムでエントリー</a>
+        </div>
+        <div class="plan">
+          <div class="kicker">Light</div>
+          <h3>ライト会員</h3>
+          <div class="price">¥6,800 <span class="small">/ 月（想定・税込）</span></div>
+          <ul class="ul">
+            <li>月4回までドロップイン</li><li>昼/夜どちらでも可</li><li>追加は会員価格</li>
+          </ul>
+          <a class="btn ghost" href="#contact">ライトで検討</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 間取り（参考URLにある“建物間取り”節のフォーマットを簡易に） -->
+  <section id="layout">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">Floor Plan</div>
+        <h2>間取り（仮）</h2>
+        <p class="muted">実際の図面が固まり次第、差し替えます。下記は掲載フォーマットの叩き台です。</p>
+      </div>
+      <div class="layout-list">
+        <div class="layout-item">
+          <div class="kicker">2F</div>
+          <img src="https://images.unsplash.com/photo-1505692952047-1a78307da8f2?q=80&w=1200&auto=format&fit=crop" alt="2Fイメージ（仮）">
+          <div class="muted" style="margin-top:6px">ワークスペース（集中席 / 会話OK席）</div>
+        </div>
+        <div class="layout-item">
+          <div class="kicker">3F</div>
+          <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1200&auto=format&fit=crop" alt="3Fイメージ（仮）">
+          <div class="muted" style="margin-top:6px">個室 / ミーティング / 物品置き場</div>
+        </div>
+        <div class="layout-item">
+          <div class="kicker">4F</div>
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1200&auto=format&fit=crop" alt="4Fイメージ（仮）">
+          <div class="muted" style="margin-top:6px">ラウンジ / キッチン（夜営業）</div>
+        </div>
+        <div class="layout-item">
+          <div class="kicker">設備</div>
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="設備イメージ（仮）">
+          <div class="muted" style="margin-top:6px">電源・Wi-Fi・複合機・プロジェクター ほか</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 概要（参考URLの「シェアオフィス概要」に相当）＋ アクセス -->
+  <section id="overview">
+    <div class="wrap cols">
+      <div class="box">
+        <div class="head"><div class="kicker">Overview</div><h2>シノノメ 概要</h2></div>
+        <ul class="ul">
+          <li><strong>所在地</strong>：東京都〇〇区〇〇 0-0-0 ○○ビル 3F（予定）</li>
+          <li><strong>最寄駅</strong>：△△線「○○駅」徒歩5分 / □□線「○○駅」徒歩8分</li>
+          <li><strong>利用時間（想定）</strong>：平日 10:00–18:00 オフィス / 18:00–23:00 ラウンジ</li>
+          <li><strong>登記・住所利用</strong>：オプション対応予定</li>
+          <li><strong>共用設備</strong>：Wi-Fi・電源・複合機・プロジェクター・モニター・キッチン ほか</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="head"><div class="kicker">Access</div><h2>アクセス</h2></div>
+        <div class="wide">
+          <!-- 住所確定後、q を置き換え -->
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;width:100%;height:320px"
+            src="https://www.google.com/maps?q=東京駅&output=embed"></iframe>
+        </div>
+        <div class="wide" style="margin-top:12px">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop" alt="周辺街並み（仮）">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お問い合わせ（参考URL終盤のフォーム位置に合わせて） -->
+  <section id="contact">
+    <div class="wrap cols">
+      <div class="box">
+        <div class="head"><div class="kicker">Contact</div><h2>内覧予約 / エントリーフォーム</h2></div>
+        <!-- 実運用時は action を差し替え（/contact.php など） -->
+        <form method="post" action="#">
+          <div class="row"><label for="name">お名前</label><input id="name" name="name" type="text" required></div>
+          <div class="row"><label for="email">メールアドレス</label><input id="email" name="email" type="email" required></div>
+          <div class="row"><label for="plan">希望プラン（現時点でOK）</label>
+            <select id="plan" name="plan">
+              <option value="">選択してください</option>
+              <option value="full">フルタイム会員</option>
+              <option value="night">ナイトラウンジ会員</option>
+              <option value="light">ライト会員</option>
+              <option value="undecided">未定 / 相談したい</option>
+            </select>
+          </div>
+          <div class="row"><label for="usage">主なご利用用途</label><textarea id="usage" name="usage" placeholder="例）リモートワーク拠点、打合せ後に一杯 など"></textarea></div>
+          <div class="row"><label for="message">内覧希望日時・ご質問</label><textarea id="message" name="message" placeholder="例）平日19時以降で◯曜日希望"></textarea></div>
+          <div class="row" style="display:flex;gap:10px;justify-content:space-between;align-items:center">
+            <span class="muted" style="font-size:.9rem">※ 送信先は実運用時に設定してください。</span>
+            <button class="btn" type="submit">送信する</button>
+          </div>
+        </form>
+      </div>
+      <div class="box">
+        <div class="head"><div class="kicker">Note</div><h2>見学について</h2></div>
+        <p class="muted">内覧は無料です。実際の雰囲気を見ていただき、「相性が良さそう」と感じた方のみご入会をご案内します。無理な勧誘はいたしません。</p>
+        <div class="wide" style="margin-top:12px">
+          <img src="https://images.unsplash.com/photo-1507919909716-c8262e491cde?q=80&w=1600&auto=format&fit=crop" alt="内覧イメージ（仮）">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- モバイルの下部固定CTA -->
+<div class="sticky"><a class="btn" href="#contact">内覧予約 / 会員エントリー</a></div>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year"></span> シノノメ</div>
+    <div>お問い合わせ：<a href="mailto:info@example.com">info@example.com</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // スムーススクロール
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href').slice(1);
+      if(!id)return;
+      const el=document.getElementById(id);
+      if(el){e.preventDefault();window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-70,behavior:'smooth'});}
+    });
+  });
+</script>
+
+</body>
+</html>
