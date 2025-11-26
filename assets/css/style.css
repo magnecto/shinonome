@@ -1,38 +1,69 @@
-:root {
---bg: #0f0f12; --card:#141419; --text:#eaeaf2; --muted:#b9b9c7; --accent:#7be495;
---accent-2:#7ac0ff; --border:#242433;
+:root{
+--bg:#ffffff; --text:#111111; --muted:#6b7280; --border:#eceff3; --ink:#0a0a0a; --ink-weak:#222;
+--accent:#111111; /* 黒アクセント */
+--container: 1160px;
+--space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px; --space-10: 40px; --space-12: 48px; --space-16: 64px; --space-20: 80px; --radius:16px;
 }
-* { box-sizing: border-box; }
-body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; color:var(--text); background:linear-gradient(180deg,#0f0f12, #11131a 40%, #0f0f12); }
-a { color: var(--accent-2); text-decoration: none; }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 24px; }
-header { display:flex; align-items:center; justify-content:space-between; padding:16px 0; }
-.brand { display:flex; gap:12px; align-items:center; }
-.logo { width:40px; height:40px; border-radius:12px; background: radial-gradient(circle at 30% 30%, var(--accent) 0%, #2e3 30%, #1a1a22 70%); box-shadow: 0 0 24px rgba(123,228,149,.35); }
-nav a { margin-left: 16px; font-weight: 600; color: var(--muted); }
-.btn { display:inline-block; padding:12px 18px; border-radius:12px; background: var(--accent); color:#0a0a0d; font-weight:800; }
-.btn-outline { border:1px solid var(--border); padding:10px 16px; border-radius:12px; color:var(--text); }
-.hero { display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; padding: 48px 0 24px; align-items:center; }
-.hero h1 { font-size: clamp(28px, 5vw, 56px); line-height:1.05; margin:0 0 12px; }
-.hero p.lead { color: var(--muted); font-size: clamp(15px, 2.6vw, 18px); margin: 4px 0 16px; }
-.hero-card { background: var(--card); border:1px solid var(--border); border-radius:20px; padding:18px; }
-.hero img { width:100%; border-radius:18px; border:1px solid var(--border); }
-.badges { display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px; }
-.badge { background:#1a1a22; border:1px solid var(--border); padding:6px 10px; border-radius:999px; color:var(--muted); font-size: 13px; }
-.grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
-.card { background: var(--card); border:1px solid var(--border); border-radius:16px; padding:16px; }
-.card h3 { margin:6px 0 6px; font-size: 18px; }
-section { padding: 40px 0; }
-.section-title { font-size: 24px; margin: 0 0 14px; }
-.plan { border:1px solid var(--border); border-radius:16px; padding:16px; background: linear-gradient(180deg,#161822, #13131a); }
-.plan h3 { margin:0 0 6px; font-size:20px; }
-.price { font-size: 28px; font-weight: 800; }
-.muted { color: var(--muted); }
-footer { border-top:1px solid var(--border); padding: 28px 0; color: var(--muted); }
-.cta-row { display:flex; gap:12px; flex-wrap:wrap; }
-.faq summary { cursor:pointer; padding:10px 0; font-weight:600; }
-.faq details { border-top:1px solid var(--border); }
-@media (max-width: 860px) {
-.hero { grid-template-columns: 1fr; }
-.grid { grid-template-columns: 1fr; }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family: system-ui,-apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; color:var(--text); background:var(--bg); line-height:1.7;}
+img{max-width:100%; height:auto; display:block}
+a{color:var(--ink); text-decoration: none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--ink)}
+
+
+.container{max-width:var(--container); margin-inline:auto; padding-inline: min(5vw, 24px);}
+.section{padding-block: var(--space-20);}
+.section-narrow{padding-block: var(--space-16);}
+.h1{font-size: clamp(28px, 5vw, 52px); line-height:1.15; letter-spacing: .01em; margin:0 0 var(--space-6);}
+.h2{font-size: clamp(22px, 3.2vw, 34px); line-height:1.2; margin:0 0 var(--space-6);}
+.lead{font-size: clamp(16px, 2.4vw, 18px); color:var(--muted);}
+.eyebrow{letter-spacing:.22em; font-size:12px; color:#9aa3af; text-transform:uppercase;}
+.muted{color:var(--muted)}
+
+
+/* Header */
+.site-header{position: sticky; top:0; backdrop-filter: blur(6px); background: rgba(255,255,255,.86); border-bottom:1px solid var(--border); z-index:10;}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding-block: var(--space-4);}
+.brand{font-weight:700; letter-spacing:.02em}
+.nav{display:flex; gap: var(--space-6);}
+.nav a{color:var(--ink-weak)}
+.btn{display:inline-block; padding:10px 16px; border-radius: 999px; border:1px solid var(--ink);}
+.btn-black{background:#111; color:#fff; border-color:#111}
+
+
+/* Hero */
+.hero{padding-top: var(--space-20);}
+.hero-grid{display:grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-12); align-items:end;}
+.hero-photo{border-radius: var(--radius); overflow:hidden; box-shadow: 0 8px 28px rgba(0,0,0,.08);}
+.hero-tags{display:flex; gap:10px; flex-wrap:wrap; margin-top: var(--space-6);}
+.tag{font-size:12px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:#455; background:#fafbfc}
+
+
+/* Media blocks */
+.media{display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items:center;}
+.media .photo{border-radius: var(--radius); overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,.06);}
+.media .stack{display:grid; gap: var(--space-6);}
+
+
+/* Features */
+.features{display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-8);}
+.card{border:1px solid var(--border); border-radius: var(--radius); padding: var(--space-8); background:#fff; box-shadow: 0 2px 8px rgba(0,0,0,.03);}
+.card h3{margin:0 0 var(--space-3); font-size:18px}
+
+
+/* Plans */
+.plan-grid{display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-8);}
+.plan{border:1px solid var(--border); border-radius: var(--radius); padding: var(--space-8); background:#f8fafc;}
+.price{font-size:28px; font-weight:800}
+
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border); background:#fff}
+.footer-inner{display:flex; justify-content:space-between; padding-block: var(--space-8);}
+
+
+/* Responsive */
+@media (max-width: 980px){
+.hero-grid, .media, .features, .plan-grid{grid-template-columns:1fr}
 }
